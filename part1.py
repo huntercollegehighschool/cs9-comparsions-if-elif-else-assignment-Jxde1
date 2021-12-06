@@ -15,13 +15,18 @@ Enter another number: 5
 The smallest number is 2
 '''
 
-number = int(input("Enter a number: "))
+# attempt 1
 
-smallest = number
+numberOne = int(input("Enter a number: "))
+numberTwo = int(input("Enter another number: "))
+numberThree = int(input("Enter another number: "))
 
-number = int(input("Enter another number: "))
+def smallerTwo(x, y):
+  if x < y:
+    return x
+  else:
+    return y
+def smallerThree(x, y, z):
+  return smallerTwo(x, smallerTwo(y, z))
 
-if number < smallest:
-  smallest = number
-  
-print("The smallest number is ", smallest)
+print("The smallest number is", smallerThree(numberOne, numberTwo, numberThree))
